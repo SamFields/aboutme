@@ -1,0 +1,28 @@
+h1{
+    border-style: solid;
+    padding: 0.2em;
+    background-color: #006747;
+    color: white;
+    margin: 0.5em;
+}
+h2{
+    padding: 0.2em;
+    margin: 0.5em;
+}
+body{
+    min-height: 75rem;
+    padding-top: 4.5rem;
+    font-family: 'Lato', sans-serif;
+}
+
+.important{
+    color: palevioletred;
+}
+
+#current{
+
+}
+
+#myname{
+    color: yellow;
+}
