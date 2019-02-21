@@ -23,3 +23,8 @@ Here are a few resources which can aid in the learning of web development:
 - Sammy Fields Bachelor of Computer Science (In Progress)
 - My favorite animal is a cheetah because they're quick and efficient in what they do, just like me:
 ![Hosted Image](https://upload.wikimedia.org/wikipedia/commons/e/ec/Cheetah_4_%2816309649223%29.jpg)
+
+## Resources
+- https://www.w3schools.com/
+- https://api.qunitjs.com/
+- https://stackoverflow.com/
