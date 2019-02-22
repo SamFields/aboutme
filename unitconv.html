@@ -57,7 +57,7 @@
 
         <main>
 
-                <p id="input">Enter Radius of Circle:
+                <p id="input">Enter temperature in farenheit:
                         <input id="temp" type="number" value="0">
                 </p>
 
@@ -65,8 +65,9 @@
 
                 <p id="result">Your answer will replace this text.</p>
 
-                <div id="smile">:)</div>
+                <br>
 
+                <!-- Create temperature conversion function and implement it into innerHTML -->
                 <script>
                         function tempConv(temp) {
                                 return (temp - 32) * (5 / 9)
@@ -79,8 +80,39 @@
                         })
                 </script>
 
+                <!-- Store number of calculations ran across sessions -->
                 <script>
+                        document.getElementById('clicker').addEventListener('click', () => {
+                                const origCount = parseInt(localStorage.getItem('countOfClicks')) || 0
+                                const i = parseInt(document.getElementById('temp').value)
+                                const ct = origCount + 1
 
+                                const ans = i + " degrees in farenheit is " + + parseFloat(Math.round(tempConv(i) * 100) / 100).toFixed(2) + ' degrees in celcius.' + ' This has been run ' + ct + ' times.'
+                                document.getElementById('result').innerHTML = ans
+
+                                localStorage.setItem('countOfClicks', ct)
+                                localStorage.setItem('guest', s)
+                        })
+                </script>
+
+                <!-- Create event listener to change innerHTML to grab text from get_this.txt -->
+                <div id="change">
+                        <h4>Don't press the button below</h4>
+                        <button type="button" onclick="loadDoc()">I said don't do it</button>
+                </div>
+
+                <script>
+                        function loadDoc() {
+                                var xhttp = new XMLHttpRequest();
+                                xhttp.onreadystatechange = function () {
+                                        if (this.readyState == 4 && this.status == 200) {
+                                                document.getElementById("change").innerHTML =
+                                                        this.responseText;
+                                        }
+                                };
+                                xhttp.open("GET", "get_this.txt", true);
+                                xhttp.send();
+                        }
                 </script>
 
         </main>
@@ -94,7 +126,7 @@
 
         </footer>
 
-        !-- Optional JavaScript -->
+        <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
                 integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
